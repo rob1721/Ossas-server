@@ -1,0 +1,24 @@
+version: 0.1
+
+phases:
+  install:
+    commands:
+      - apt-get update
+      - npm install -g typescript
+      - npm install
+  pre_build:
+    commands:
+      - echo Nothing to do in build phase.
+  build:
+    commands:
+      - npm run build
+  post_build:
+    commands:
+      - echo Nothing to do in build phase.
+artifacts:
+  files:
+    - dist/**/*
+    - package.json
+    - .ebextensions/**/*
+  name: ossas-api-$(date +%Y-%m-%d-%H:%M:%S)
+      
