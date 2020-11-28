@@ -27,6 +27,7 @@ async function main() {
   }
   catch (error) {
     logModule.error(`Failed database connection`);
+    console.log(error);
   }
 }
 export default { main };
