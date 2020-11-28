@@ -12,6 +12,7 @@ function getLike(id: string): Promise<Like | null>{
 function addLike(like: Like): Promise<Like>{
   like.createdAt = new Date();
   like.updatedAt = like.createdAt;
+  
   return repository.addLike(like);
 }
 
