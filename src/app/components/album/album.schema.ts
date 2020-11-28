@@ -4,6 +4,7 @@ import { Album } from "../../models/album.model";
 const definition: Partial<Record<keyof Album, any>> = {
   name: { type: String, required: true },
   posts: [{ type: Schema.Types.ObjectId, ref: 'Post' }],
+  categories: [{ type: Schema.Types.ObjectId, ref: 'Category' }],
   updatedAt: { type: Date },
   createdAt: { type: Date }
 };
