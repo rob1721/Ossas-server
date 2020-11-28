@@ -14,7 +14,7 @@ async function main() {
 
   server.use(express.json());
   server.use(morgan('dev'));
-  server.use(cors({ origin: 'http://localhost:16001' }));
+  server.use(cors({ origin: 'http://localhost:18001' }));
   server.use('/api', ...components);
 
   try {
