@@ -2,19 +2,11 @@ import model from "./user.schema";
 import { User } from "../../models/user.model";
 
 async function getUsers(): Promise<User[]>{
-  return model.find()
-    .populate('posts')
-    .populate('album')
-    .populate('following')
-    .populate('followers');
+  return model.find();
 }
 
 async function getUser(id: string): Promise<User | null>{
-  return model.findOne({ _id: id })
-  .populate('posts')
-  .populate('album')
-  .populate('following')
-  .populate('followers');
+  return model.findOne({ _id: id });
 }
 
 async function addUser(user: User): Promise<User> {

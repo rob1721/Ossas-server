@@ -3,7 +3,7 @@ export interface User {
   name: string;
   pass?: string;
   email?: string;
-  avatar: string;
+  avatar?: string;
   posts?: string[];
   albums?: string[];
   following?: string[];
