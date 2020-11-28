@@ -12,6 +12,7 @@ function getPost(id: string): Promise<Post | null>{
 function addPost(post: Post): Promise<Post>{
   post.title = post.title.toLowerCase();
   post.createdAt = new Date();
+  post.date = post.createdAt;
   post.updatedAt = post.createdAt;
   return repository.addPost(post);
 }

@@ -3,14 +3,12 @@ import { Post } from "../../models/post.model";
 
 async function getPosts(): Promise<Post[]>{
   return model.find()
-    .populate('likes')
     .populate('categories')
     .populate('comments');
 }
 
 async function getPost(id: string): Promise<Post | null>{
   return model.findOne({ _id: id })
-    .populate('likes')
     .populate('categories')
     .populate('comments');
 }
