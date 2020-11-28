@@ -3,14 +3,12 @@ import { Comment } from "../../models/comment.model";
 
 async function getComments(): Promise<Comment[]>{
   return model.find()
-    .populate('author')
-    .populate('comment');
+    .populate('author');
 }
 
 async function getComment(id: string): Promise<Comment | null>{
   return model.findOne({ _id: id })
-    .populate('author')
-    .populate('comment');
+    .populate('author');
 }
 
 async function addComment(comment: Comment): Promise<Comment> {

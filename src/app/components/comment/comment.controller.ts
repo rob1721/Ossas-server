@@ -10,6 +10,7 @@ function getComment(id: string): Promise<Comment | null>{
 }
 
 function addComment(comment: Comment): Promise<Comment>{
+  comment.date = new Date();
   comment.createdAt = new Date();
   comment.updatedAt = comment.createdAt;
   return repository.addComment(comment);
