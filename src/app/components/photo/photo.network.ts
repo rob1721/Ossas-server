@@ -1,15 +1,13 @@
 import express, { Request, Response, Router } from "express";
 import response from "../../modules/response.module";
-import controller from "./post.controller";
-import { Post } from "../../models/post.model";
-
-import Postt from "./post.schema";
+import controller from "./photo.controller";
+import { Photo } from "../../models/photo.model";
 
 const router: Router = express.Router();
 
 router.get('/all', async (req: Request, res: Response) => {
   try {
-    const result: Post[] = await controller.getPosts();
+    const result: Photo[] = await controller.getPhotos();
     response.success(req, res, result);
   }
   catch (error) {
@@ -22,7 +20,7 @@ router.get('/:id', async (req: Request, res: Response) => {
   const id: string = req.params['id'];
 
   try {
-    const result: Post | null = await controller.getPost(id);
+    const result: Photo | null = await controller.getPhoto(id);
     response.success(req, res, result);
   }
   catch (error) {
@@ -32,14 +30,10 @@ router.get('/:id', async (req: Request, res: Response) => {
 });
 
 router.post('/', async (req: Request, res: Response) => {
-  const { title, likes, categories, comments, date, description } = req.body;
-  const image = req.file.path;
-  const newPost = {
-    image, title, likes, categories, comments, date, description
-  };
-  const post = new Postt(newPost);
+  const photo: Photo = req.body;
+  
   try {
-    const result: Post = await controller.addPost(post);
+    const result: Photo = await controller.addPhoto(photo);
     response.success(req, res, result, 201);
   }
   catch (error) {
@@ -49,11 +43,11 @@ router.post('/', async (req: Request, res: Response) => {
 });
 
 router.patch('/:id', async (req: Request, res: Response) => {
-  const post: Partial<Post> = req.body;
+  const photo: Partial<Photo> = req.body;
   const id: string = req.params['id'];
 
   try {
-    const result: Post | null = await controller.updatePost(id, post);
+    const result: Photo | null = await controller.updatePhoto(id, photo);
     response.success(req, res, result, 200);
   }
   catch (error) {
@@ -66,7 +60,7 @@ router.delete('/:id', async (req: Request, res: Response) => {
   const id: string = req.params['id'];
 
   try {
-    const result: Post | null = await controller.deletePost(id);
+    const result: Photo | null = await controller.deletePhoto(id);
     response.success(req, res, result, 200);
   }
   catch (error) {

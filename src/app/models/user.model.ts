@@ -4,7 +4,7 @@ export interface User {
   pass?: string;
   email?: string;
   avatar?: string;
-  posts?: string[];
+  photos?: string[];
   albums?: string[];
   following?: string[];
   followers?: string[];

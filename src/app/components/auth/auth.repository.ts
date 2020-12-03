@@ -1,4 +1,4 @@
-/*import model from "./auth.schema";
+import model from "./auth.schema";
 import { Auth } from "../../models/auth.model";
 
 async function userSignUp(auth: Auth): Promise<Auth> {
@@ -10,4 +10,3 @@ async function userLogIn(auth: Auth): Promise<Auth | null>{
 }
 
 export default { userSignUp, userLogIn };
-*/

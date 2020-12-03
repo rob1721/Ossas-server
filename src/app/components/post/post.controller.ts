@@ -11,6 +11,8 @@ function getPost(id: string): Promise<Post | null>{
 
 function addPost(post: Post): Promise<Post>{
   post.title = post.title.toLowerCase();
+  if(post.description) 
+    post.description = post.description.toLowerCase();
   post.createdAt = new Date();
   post.date = post.createdAt;
   post.updatedAt = post.createdAt;
@@ -21,6 +23,8 @@ function updatePost(id: string, post: Partial<Post>): Promise<Post | null>{
   if(post.title){
     post.title = post.title.toLowerCase();
   }
+  if(post.description) 
+    post.description = post.description.toLowerCase();
   post.updatedAt = new Date();
   return repository.updatePost(id, post);
 }

@@ -15,4 +15,4 @@ const definition: Partial<Record<keyof Post, any>> = {
 
 const schema: Schema<Post> = new Schema (definition);
 
-export default model<Post & Document> ('Post', schema, 'post');
+export default model<Post & Document> ('Postt', schema, 'post');

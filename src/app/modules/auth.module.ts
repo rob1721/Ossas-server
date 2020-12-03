@@ -1,4 +1,4 @@
-/*import jwt from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 
 
 function sing(payload: any){
@@ -10,4 +10,3 @@ function verify(token: any){
 }
 
 export default { sing, verify };
-*/

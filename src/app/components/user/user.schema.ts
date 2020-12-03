@@ -6,7 +6,7 @@ const definition: Partial<Record<keyof User, any>> = {
   pass: { type: String },
   email: { type: String },
   avatar: { type: String, required: true },
-  posts: [{ type: Schema.Types.ObjectId, ref: 'Post' }],
+  photos: [{ type: Schema.Types.ObjectId, ref: 'Post' }],
   albums: [{ type: Schema.Types.ObjectId, ref: 'Album' }],
   following: [{ type: Schema.Types.ObjectId, ref: 'User' }],
   followers: [{ type: Schema.Types.ObjectId, ref: 'User' }],

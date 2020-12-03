@@ -1,6 +1,7 @@
-/*import repository from "./auth.repository";
+import repository from "./auth.repository";
 import { Auth } from "../../models/auth.model";
 import authModule from "../../modules/auth.module";
+import bcrypt from "jsonwebtoken"; // encriptar la clave (ojo q puede estar la solucion en el modulo auth)
 
 function userSignUp(user: any): Promise<any>{
   user.createdAt = new Date();
@@ -20,12 +21,11 @@ async function userLogIn(user: any) {
     return Promise.reject();
   }
 
-  const { _id, name, email, rol, password } = userFound as any;
+  const { _id, name, email, password } = userFound as any;
   const token: string = authModule.sing({ user: userFound._id });
-  const result = { _id, name, email, rol, password, token };
+  const result = { _id, name, email, password, token };
 
   return result;
 }
 
 export default { userSignUp, userLogIn };
-*/

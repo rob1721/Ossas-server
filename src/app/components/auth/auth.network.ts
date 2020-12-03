@@ -1,4 +1,4 @@
-/*import express, { Request, Response, Router } from "express";
+import express, { Request, Response, Router } from "express";
 import { User } from "../../models/user.model";
 import response from "../../modules/response.module";
 import controller from "./auth.controller";
@@ -6,7 +6,7 @@ import controller from "./auth.controller";
 
 const router: Router = express.Router();
 
-router.post('/user/signin', async (req: Request, res: Response) => {
+router.post('/signin', async (req: Request, res: Response) => {
   const user: User = req.body;
   
   try {
@@ -19,7 +19,7 @@ router.post('/user/signin', async (req: Request, res: Response) => {
   }
 });
 
-router.post('/user/login', async (req: Request, res: Response) => {
+router.post('/login', async (req: Request, res: Response) => {
   const user: User = req.body;
 
   try {
@@ -33,4 +33,3 @@ router.post('/user/login', async (req: Request, res: Response) => {
 });
 
 export default router;
-*/
