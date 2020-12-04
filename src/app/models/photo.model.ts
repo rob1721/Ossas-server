@@ -3,6 +3,7 @@ export interface Photo{
   title: string;
   description: string;
   imagePath?: string;
+  uid: string;
   updatedAt?: Date;
   createdAt?: Date;
 }

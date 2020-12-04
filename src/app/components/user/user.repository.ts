@@ -2,7 +2,8 @@ import model from "./user.schema";
 import { User } from "../../models/user.model";
 
 async function getUsers(): Promise<User[]>{
-  return model.find();
+  return model.find()
+  .populate('photos');
 }
 
 async function getUser(id: string): Promise<User | null>{

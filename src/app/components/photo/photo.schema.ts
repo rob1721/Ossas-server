@@ -5,6 +5,7 @@ const definition: Partial<Record<keyof Photo, any>> = {
   title: { type: String, required: true },
   description: { type: String, required: true },
   imagePath: { type: String },
+  uid: { type: Schema.Types.ObjectId, ref: 'User' },
   updatedAt: { type: Date },
   createdAt: { type: Date }
 };
