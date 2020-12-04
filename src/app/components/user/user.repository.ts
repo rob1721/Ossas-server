@@ -7,7 +7,8 @@ async function getUsers(): Promise<User[]>{
 }
 
 async function getUser(id: string): Promise<User | null>{
-  return model.findOne({ _id: id });
+  return model.findOne({ _id: id })
+  .populate('photos');
 }
 
 async function addUser(user: User): Promise<User> {
