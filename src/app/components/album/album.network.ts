@@ -5,6 +5,17 @@ import { Album } from "../../models/album.model";
 
 const router: Router = express.Router();
 
+router.get('/asd', async (req: Request, res: Response) => {
+  try {
+    const asdasd = req.body;
+    console.log(asdasd);
+    response.success(req, res, asdasd);
+  } catch (error) {
+    console.error(error);
+    response.error(req, res, 'fallaste', 500);
+  }
+});
+
 router.get('/all', async (req: Request, res: Response) => {
   try {
     const result: Album[] = await controller.getAlbums();
